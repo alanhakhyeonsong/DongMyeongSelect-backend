@@ -5,7 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
@@ -14,13 +16,10 @@ import javax.validation.constraints.NotEmpty;
 public class UpdateRequestDto {
     private Long storeId;
     // Store
-    @NotEmpty(message = "필수 입력 값입니다.")
     private String location;
-    @NotEmpty(message = "필수 입력 값입니다.")
     private String contactNum;
 
     // Menu
-    @NotEmpty(message = "필수 입력 값입니다.")
     private String foodName;
     private int price;
 }

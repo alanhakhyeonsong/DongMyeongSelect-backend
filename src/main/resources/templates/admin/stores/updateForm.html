@@ -1,6 +1,12 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header" />
+<style>
+    .field-error {
+        border-color: #dc3545;
+        color: #dc3545;
+    }
+</style>
 <body>
 
 <div class="container">
@@ -8,17 +14,21 @@
     <div th:replace="fragments/bodyHeader :: bodyHeader" />
 
     <form role="form" th:action="@{/admin/stores/{id}/edit(id=${dto.storeId})}" th:object="${dto}" method="post">
+
         <div class="form-group">
             <label th:for="location">위치</label>
-            <input type="text" th:field="*{location}" class="form-control" placeholder="도로명 주소 입력">
+            <input type="text" th:field="*{location}" th:errorclass="field-error" class="form-control" placeholder="도로명 주소 입력">
+            <td class="field-error" th:if="${#fields.hasErrors('location')}" th:errors="*{location}">Location Error</td>
         </div>
         <div class="form-group">
             <label th:for="contactNum">전화번호</label>
-            <input type="text" th:field="*{contactNum}" class="form-control" placeholder="전화번호 입력">
+            <input type="text" th:field="*{contactNum}" th:errorclass="field-error" class="form-control" placeholder="전화번호 입력">
+            <td class="field-error" th:if="${#fields.hasErrors('contactNum')}" th:errors="*{contactNum}">ContactNum Error</td>
         </div>
         <div class="form-group">
             <label th:for="foodName">대표 메뉴</label>
-            <input type="text" th:field="*{foodName}" class="form-control" placeholder="대표 메뉴 입력">
+            <input type="text" th:field="*{foodName}" th:errorclass="field-error" class="form-control" placeholder="대표 메뉴 입력">
+            <td class="field-error" th:if="${#fields.hasErrors('foodName')}" th:errors="*{foodName}">FoodName Error</td>
         </div>
         <div class="form-group">
             <label th:for="price">가격</label>
