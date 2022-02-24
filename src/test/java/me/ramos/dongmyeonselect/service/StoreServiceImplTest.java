@@ -145,9 +145,11 @@ class StoreServiceImplTest {
 
         //when
         storeRepository.delete(store);
-        menuRepository.delete(menu);
+//        menuRepository.delete(menu);
 
         //then
         assertThat(storeRepository.findAllByFetch().size()).isEqualTo(0);
+        assertThat(storeRepository.findById(1L)).isEmpty();
+        assertThat(menuRepository.findById(1L)).isEmpty();
     }
 }

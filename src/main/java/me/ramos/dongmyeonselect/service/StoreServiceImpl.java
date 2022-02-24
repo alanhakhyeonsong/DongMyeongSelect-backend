@@ -106,8 +106,6 @@ public class StoreServiceImpl implements StoreService {
     @Transactional
     @Override
     public void delete(Long storeId) {
-        Menu menu = storeRepository.findById(storeId).orElseThrow().getMenu();
         storeRepository.deleteById(storeId);
-        menuRepository.delete(menu);
     }
 }
