@@ -28,7 +28,7 @@ public class Store {
     @Enumerated(value = EnumType.STRING)
     private Category category;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "MENU_ID")
     private Menu menu;
 
