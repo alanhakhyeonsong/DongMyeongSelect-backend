@@ -10,14 +10,14 @@ Category(한식, 일식/돈까스/회, 중식, 양식/아시안, 패스트푸드
 
 ## 만든이
 
-| Backend                                       | Fronend                                 |
+| Backend                                       | Frontend                                 |
 | --------------------------------------------- | --------------------------------------- |
 | [송학현](https://github.com/alanhakhyeonsong) | [김철환](https://github.com/chulhwan99) |
 
 ## Used Stack
 
 - Frontend: Javascript(ES6), Vue.js, Webpack
-- Backend: Spring Boot(MVC, Data JPA, Security OAuth2), H2 Database(test용), MySQL(배포용), Thymeleaf
+- Backend: Java 11, Spring Boot(MVC, Data JPA, Security OAuth2), H2 Database(test용), MySQL(배포용), Thymeleaf
 - Infra: AWS EC2, AWS RDS, Docker
 
 ## API
